@@ -19,10 +19,12 @@ router.get('/gameBoardData', function(req, res){
 	  [0,0,0,1,0],
 	  [0,0,0,0,1]
   ];
-
+  
+  // respond with gameData in JSON format
 	res.json(gameData);
 });
 
+// set root route for app's data
 app.use('/api', router);
 
 app.listen(port);
