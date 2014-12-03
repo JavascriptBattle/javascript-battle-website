@@ -122,7 +122,7 @@ module.exports = function(grunt) {
   grunt.registerTask('local', ['jshint', 'test', 'nodemon']);
 
 
-  grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'sass', 'clean']);
 
 
   // grunt.registerTask('upload', function(n) {
