@@ -18,19 +18,18 @@ app.leaderboard = new Leaderboard();
 app.leaderboardView = new LeaderboardView({ model: app.leaderboard });
 $('#leaderboard div.container').append(app.leaderboardView.$el);
 
-isLoaded();
-function isLoaded () {
-  if (!$('.battle-tile').length && !$('.leaderboard-table').children().length) {
-    $('.gamegrid-content, .game-tips').hide();
-    if (!$('.spinner').length) {
-      $('#replay').css('min-height', '500px').append('<img class="spinner" src="https://s3.amazonaws.com/jharclerode/350+(2).GIF">');
+  isLoaded();
+  function isLoaded () {
+    if (!$('.battle-tile').length && !$('.leaderboard-table').children().length) {
+      $('.gamegrid-content, .game-tips').hide();
+      if (!$('.spinner').length) {
+        $('#replay').css('min-height', '500px').append('<img class="spinner" src="https://s3.amazonaws.com/jharclerode/350+(2).GIF">');
+      }
+      setTimeout(isLoaded,1000);
     }
-    console.log('loading');
-    setTimeout(isLoaded,1000);
+    else {
+      $('.gamegrid-content, .game-tips').show();
+      $('#replay').css('min-height', '1094px');
+      $('.spinner').remove();
+    }
   }
-  else {
-    $('.gamegrid-content, .game-tips').show();
-    $('#replay').css('min-height', '1094px');
-    $('.spinner').remove();
-  }
-}
